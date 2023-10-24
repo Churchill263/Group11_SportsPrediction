@@ -66,6 +66,7 @@ if st.button("Predict"):
     }
     data = pd.DataFrame(input_features,index=[0])
     # Scale the input features using the scaler
+    scaler.fit(data)
     scaled_input = scaler.fit_transform(data)
     data = pd.DataFrame(scaled_input, columns= data.columns,index=[0])
 
