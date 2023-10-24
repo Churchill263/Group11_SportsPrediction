@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import random
 import sklearn
-
+import pandas as pd
 
 
 scaler = pickle.load(open("scaler.pkl","rb"))
