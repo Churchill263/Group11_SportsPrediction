@@ -6,7 +6,7 @@ import sklearn
 
 
 
-scaler = pickle.load(opem("scaler.pkl","rd"))
+scaler = pickle.load(open("scaler.pkl","rd"))
 
 model = pickle.load(open("model.pkl", "rb"))
 
