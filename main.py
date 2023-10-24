@@ -53,7 +53,7 @@ if st.button("Predict"):
     data = pd.DataFrame(scaled_input,index[0])
 
     # Make a prediction
-    prediction = model.predict(scaled_input_features)
+    prediction = model.predict(data)
     st.write(f"The predicted value is: {prediction[0]:.2f} ")
 
 
