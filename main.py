@@ -40,16 +40,33 @@ mentality_composure = st.number_input("Mentality Composure", value=0)
 counter = 0
 if st.button("Predict"):
     # Create a feature vector from the user inputs
-    input_features = [
-        potential, value_eur, wage_eur, age, international_reputation, release_clause_eur,
-        shooting, passing, dribbling, physic, attacking_crossing, attacking_short_passing,
-        skill_curve, skill_long_passing, skill_ball_control, movement_reactions,
-        power_shot_power, power_long_shots, mentality_aggression, mentality_vision,
-        mentality_composure
-    ]
-
+   # Create a dictionary with input variables
+    input_features = {
+        "Potential": potential,
+        "Value (EUR)": value_eur,
+        "Wage (EUR)": wage_eur,
+        "Age": age,
+        "International Reputation": international_reputation,
+        "Release Clause (EUR)": release_clause_eur,
+        "Shooting": shooting,
+        "Passing": passing,
+        "Dribbling": dribbling,
+        "Physic": physic,
+        "Attacking Crossing": attacking_crossing,
+        "Attacking Short Passing": attacking_short_passing,
+        "Skill Curve": skill_curve,
+        "Skill Long Passing": skill_long_passing,
+        "Skill Ball Control": skill_ball_control,
+        "Movement Reactions": movement_reactions,
+        "Power Shot Power": power_shot_power,
+        "Power Long Shots": power_long_shots,
+        "Mentality Aggression": mentality_aggression,
+        "Mentality Vision": mentality_vision,
+        "Mentality Composure": mentality_composure
+    }
+    data = pd.DataFrame(input_features,index[0])
     # Scale the input features using the scaler
-    scaled_input_features = scaler.transform(input_features)
+    scaled_input = scaler.transform(data)
     data = pd.DataFrame(scaled_input,index[0])
 
     # Make a prediction
