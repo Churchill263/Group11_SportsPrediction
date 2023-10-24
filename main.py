@@ -64,10 +64,10 @@ if st.button("Predict"):
         "Mentality Vision": mentality_vision,
         "Mentality Composure": mentality_composure
     }
-    data = pd.DataFrame(input_features)
+    data = pd.DataFrame(input_features,index=[0])
     # Scale the input features using the scaler
     scaled_input = scaler.transform(data)
-    data = pd.DataFrame(scaled_input, columns= data.columns)
+    data = pd.DataFrame(scaled_input, columns= data.columns,index=[0])
 
     # Make a prediction
     prediction = model.predict(data)
