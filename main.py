@@ -40,13 +40,13 @@ mentality_composure = st.number_input("Mentality Composure", value=0)
 counter = 0
 if st.button("Predict"):
     # Create a feature vector from the user inputs
-    input_features = np.array([
+    input_features = [
         potential, value_eur, wage_eur, age, international_reputation, release_clause_eur,
         shooting, passing, dribbling, physic, attacking_crossing, attacking_short_passing,
         skill_curve, skill_long_passing, skill_ball_control, movement_reactions,
         power_shot_power, power_long_shots, mentality_aggression, mentality_vision,
         mentality_composure
-    ]).reshape(1, -1)
+    ]
 
     # Scale the input features using the scaler
     scaled_input_features = scaler.transform(input_features)
