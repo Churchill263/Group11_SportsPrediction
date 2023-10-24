@@ -8,7 +8,7 @@ import pandas as pd
 
 scaler = pickle.load(open("scaler.pkl","rb"))
 
-model = pickle.load(open("model.pkl", "rb"))
+model = pickle.load(open("model.pkl", "rb"))["model"]
 
 
 st.title("Group Number 11 Player Prediction")
