@@ -37,10 +37,9 @@ mentality_aggression = st.number_input("Mentality Aggression", value=0)
 mentality_vision = st.number_input("Mentality Vision", value=0)
 mentality_composure = st.number_input("Mentality Composure", value=0)
 
-counter = 0
 if st.button("Predict"):
     # Create a feature vector from the user inputs
-   # Create a dictionary with input variables
+    # Create a dictionary with input variables
     input_features = {
         "potential": potential,
         "value_eur": value_eur,
